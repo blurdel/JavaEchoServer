@@ -4,7 +4,7 @@ import java.net.InetAddress;
 import java.net.SocketException;
 
 
-public class UdpSender extends Thread {
+public class UdpSend extends Thread {
 
 	private DatagramSocket socket;
 	private static int destPort;
@@ -20,7 +20,7 @@ public class UdpSender extends Thread {
 			}
 
 			destPort = Short.parseShort(args[0]);
-			new UdpSender().start();
+			new UdpSend().start();
 			System.out.println("Sending on: " + destPort);
 		}
 		catch (Exception e) {
@@ -28,7 +28,7 @@ public class UdpSender extends Thread {
 		}
 	}
 	
-	public UdpSender() throws SocketException {
+	public UdpSend() throws SocketException {
 		socket = new DatagramSocket();
 	}
 
